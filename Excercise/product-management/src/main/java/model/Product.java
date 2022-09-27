@@ -1,62 +1,20 @@
 package model;
 
 public class Product {
-
-    private int code;
-    String name;
+    int code;
+    String name = "";
     double price;
-    String origin = "chưa rõ";
-    String avatar;
+    String origin = "Chưa rõ";
 
-    private int randomId() {
-        return (int) (Math.random() * 10000 + 10000);
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
-    public Product() {
-    }
+    String picture = "img/defaultProduct.jpg";
 
-    public Product (String name, double price, String origin) {
-        this.code = randomId();
-        this.name = name;
-        this.price = price;
-        this.origin = origin;
+    public int getCode() {
+        return code;
     }
-
-    public Product(String name, double price, String origin, String avatar) {
-        this.code = randomId();
-        this.name = name;
-        this.origin = origin;
-        this.avatar = avatar;
-    }
-
-    public Product(int code, String name, double price, String origin, String avatar) {
-        this.code = code;
-        this.name = name;
-        this.price = price;
-        this.origin = origin;
-        this.avatar = avatar;
-    }
-
-    public Product (int code, String name, double price, String origin) {
-        this.code = code;
-        this.name = name;
-        this.price = price;
-        this.origin = origin;
-    }
-
-    public Product (String name, double price) {
-        this.code= randomId();
-        this.name = name;
-        this.price = price;
-    }
-
-    public Product (int code, String name, double price) {
-        this.code = code;
-        this.name = name;
-        this.price = price;
-    }
-
-    public int getCode() { return code; }
 
     public void setCode(int code) {
         this.code = code;
@@ -78,6 +36,13 @@ public class Product {
         this.price = price;
     }
 
+    public Product(String name, double price, String origin) {
+        this.code = randomId();
+        this.name = name;
+        this.price = price;
+        this.origin = origin;
+    }
+
     public String getOrigin() {
         return origin;
     }
@@ -86,11 +51,46 @@ public class Product {
         this.origin = origin;
     }
 
-    public void setAvatar (String avatar) {
-        this.avatar = avatar;
+    public Product(String name, double price, String origin, String picture) {
+        this.code = randomId();
+        this.name = name;
+        this.price = price;
+        this.origin = origin;
+        this.picture = picture;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public Product(int code, String name, double price, String origin, String picture) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.origin = origin;
+        this.picture = picture;
+    }
+
+    public Product(int code, String name, double price, String origin) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.origin = origin;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+        this.code = randomId();
+    }
+
+    public Product(int code, String name, double price) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+    }
+
+    private int randomId() {
+        return (int) (Math.random() * 10000 + 10000);
     }
 }

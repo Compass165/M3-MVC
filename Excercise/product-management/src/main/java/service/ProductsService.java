@@ -4,12 +4,14 @@ import model.Product;
 
 import java.util.ArrayList;
 
-public interface ProductService {
-
+public interface ProductsService {
     public ArrayList<Product> list();
-    public boolean delete (int code);
-    public boolean add (Product product);
-    public boolean update(int code, Product product);
-    public Product find (int code);
 
+    public boolean delete(int code);
+
+    public boolean add(Product product);
+
+    public boolean update(int code, Product product);
+
+    public Product find(int code);
 }
