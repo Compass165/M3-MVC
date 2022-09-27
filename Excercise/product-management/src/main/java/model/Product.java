@@ -15,6 +15,13 @@ public class Product {
     public Product() {
     }
 
+    public Product (String name, double price, String origin) {
+        this.code = randomId();
+        this.name = name;
+        this.price = price;
+        this.origin = origin;
+    }
+
     public Product(String name, double price, String origin, String avatar) {
         this.code = randomId();
         this.name = name;
